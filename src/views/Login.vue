@@ -110,6 +110,7 @@ export default {
             this.textError = response.data.message
             this.snackbar = true
           } else {
+            localStorage.setItem('responseLogin', JSON.stringify(response.data))
             this.$router.push({ path: '/dashboard?' + +new Date() })
           }
         }).catch(e => {
